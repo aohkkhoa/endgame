@@ -1,0 +1,18 @@
+<h2 class="text-center">Update movie</h2>
+<br>
+<div>
+    <form class="container" #updateform="ngForm" (ngSubmit)="updateProduct()">
+
+        <div class="form-outline mb-4">
+            <input type="text" id="name" class="form-control" name="name" [(ngModel)]="movie.name">
+            <label class="form-label" for="name">Name</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="file" id="image" class="form-control" name="image" [(ngModel)]="movie.image" />
+            <label class="form-label" for="image">Image</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sửa</button>
+    </form>
+</div>

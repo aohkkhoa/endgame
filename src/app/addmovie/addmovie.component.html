@@ -1,0 +1,29 @@
+<h2 class="text-center">Create movie</h2>
+<br>
+<form class="container" [formGroup]="formTemplate" (submit)="createProduct()">
+    <!-- <div class="form-outline mb-4">
+        <input type="text" id="form6Example1" formControlName="name" class="form-control" name="name" [(ngModel)]="product.kindName">
+        <label class="form-label" for="form6Example1">Loai</label>
+    </div> -->
+
+    <div class="form-outline mb-4">
+        <input type="text" id="form6Example1" formControlName="name" class="form-control" name="name" [(ngModel)]="movie.name">
+        <label class="form-label" for="form6Example1">Name</label>
+        <div class="text-danger" *ngIf="isSubmitted && formControls.name.errors?.required">This field is required</div>
+    </div>
+    <!-- <div class="form-outline mb-4">
+        <input type="text" id="form6Example4" formControlName="idKind" class="form-control" name="idKind" [(ngModel)]="product.idKind" />
+        <label class="form-label" for="form6Example4">Kind</label>
+    </div> -->
+    <div class="form-outline mb-4">
+        <input type="file" id="form6Example5" #fileUpload formControlName="image" class="form-control" name="image" [(ngModel)]="movie.image" (change)="upload($event)" accept="*.png.jpg" />
+        <label class="form-label" for="form6Example5">Image</label>
+        <div class="text-danger" *ngIf="isSubmitted && formControls.image.errors?.required">This field is required</div>
+    </div>
+    <div>
+        <img [src]="imgSrc" width="200px" (click)="fileUpload.click()">
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Thêm</button>
+</form>

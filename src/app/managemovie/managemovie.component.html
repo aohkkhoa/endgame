@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>movies</h2>
+
+    <div>
+        <input type="text" placeholder="search by name" [(ngModel)]="name">
+        <button class="" type="button" (click)="searchName()">
+            Search
+        </button>
+    </div>
+
+    <button [routerLink]="['/add']">add</button>
+    <table class="table table-striped">
+        <tr>
+            <td>Image</td>
+            <td>Name</td>
+         
+            <!-- <td>kind</td> -->
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr *ngFor="let pro of movie">
+            <td><img width="200px" src="/assets/menu/img/trending/{{pro.image}}"></td>
+            <td>{{pro.name}}</td>
+         
+            <!-- <td>{{pro.idKind}}</td> -->
+            <td><button (click)="deleteProduct(pro.id)" >Delete</button></td>
+            <td>
+                <button (click)="selectUpdate(pro.id)">Edit</button>
+            </td>
+        </tr>
+    </table>
+</div>
